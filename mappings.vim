@@ -48,8 +48,8 @@ nmap <S-i> :%s/
 "Moverse insert mode
 inoremap <C-f> <right>
 inoremap <C-b> <left>
-imap <C-n> <down>
-imap <C-p> <up>
+imap <C-j> <down>
+imap <C-k> <up>
 
 "terminal
 nmap <C-t> :10sp term://zsh<CR>a
@@ -64,21 +64,13 @@ nmap <silent> <F1> <C-w>wa
 autocmd filetype sh inoremap #! #!/bin/bash
 "autocmd filetype html inoremap <CR> <CR> <left><CR><UP><TAB>
 
-"copiado/pegado
-vmap <leader>xyy "+y
-vmap <leader>xpp "+p
-nmap <leader>xpp "+p
-
-" WSL yank support
-let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
-if executable(s:clip)
-    augroup WSLYank
-        autocmd!
-        autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
-    augroup END
-endif
+"copiado
+vmap yy "+y
 
 let g:AutoPairsShortcutJump = ''
 let g:AutoPairsShortcutToggle = ''
 
 nnoremap <leader>r :w !python3.10<CR>
+
+"desactivar recording
+map q <Nop>

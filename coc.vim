@@ -23,7 +23,7 @@ inoremap <silent><expr> <TAB>
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice.
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+			      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
@@ -70,7 +70,7 @@ nmap <leader>f  <Plug>(coc-format-selected)
 augroup mygroup
   autocmd!
   "Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json,c,python setl formatexpr=CocAction('formatSelected')
+  autocmd FileType typescript,java,json,c,python setl formatexpr=CocAction('formatSelected')
   "Update signature help on jump placeholder.
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end

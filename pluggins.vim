@@ -12,7 +12,7 @@ Plug 'ap/vim-css-color'
 Plug 'mattn/emmet-vim'
 "Plug 'sheerun/vim-polyglot'
 Plug 'vim-airline/vim-airline' "pestañas arriba
-Plug 'neovim/nvim-lspconfig'
+"Plug 'neovim/nvim-lspconfig'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 "Pluggins para JS
@@ -36,8 +36,8 @@ autocmd FileType html,css,php imap ,, <c-y>,
 let g:user_emmet_mode='a'
 
 "copilot
-imap <M-d> <C-]>
-inoremap <M-n>
-imap <M-n> <Plug>(copilot-next)
-imap <M-p> <Plug>(copilot-previous)
+imap <C-d> <C-]>
+imap <C-n> <Plug>(copilot-next)
+imap <C-p> <Plug>(copilot-previous)
 let g:loaded_language_client = 1
+
